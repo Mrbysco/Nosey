@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+issueTrackerURL="https://github.com/Mrbysco/Nosey/issues"
+license="MIT"
+
+[[mods]]
+modId="nosey"
+version="${file.jarVersion}"
+displayName="Nosey"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/nosey"
+authors="Mrbysco"
+description='''
+Do you smell what I'm cooking?
+'''
