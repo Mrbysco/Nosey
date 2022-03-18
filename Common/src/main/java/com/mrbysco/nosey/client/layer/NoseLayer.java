@@ -19,7 +19,7 @@ public abstract class NoseLayer<T extends LivingEntity, M extends EntityModel<T>
 
 	@Override
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLightIn, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-		if(Services.PLATFORM.enableGhastNose()) {
+		if (Services.PLATFORM.enableGhastNose()) {
 			this.getParentModel().copyPropertiesTo(getNoseModel());
 			getNoseModel().setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			VertexConsumer vertexconsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(noseTextureLocation()));

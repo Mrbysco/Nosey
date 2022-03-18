@@ -24,6 +24,7 @@ public class NoseyForge {
 
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
 			eventBus.addListener(ModelLayerHelper::registerLayerDefinitions);
+			eventBus.addListener(ModelLayerHelper::registerAdditionalLayers);
 		});
 	}
 }
