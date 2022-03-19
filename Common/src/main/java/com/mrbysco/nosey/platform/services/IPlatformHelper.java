@@ -6,4 +6,9 @@ public interface IPlatformHelper {
 	 * Enables the rendering of the ghast nose
 	 */
 	boolean enableGhastNose();
+
+	/**
+	 * Enables the rendering of the creeper nose
+	 */
+	boolean enableCreeperNose();
 }
