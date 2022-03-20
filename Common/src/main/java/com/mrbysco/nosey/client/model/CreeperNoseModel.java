@@ -35,6 +35,7 @@ public class CreeperNoseModel<T extends Entity> extends HierarchicalModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+		this.root.yRot = netHeadYaw * ((float)Math.PI / 180F);
+		this.root.xRot = headPitch * ((float)Math.PI / 180F);
 	}
 }

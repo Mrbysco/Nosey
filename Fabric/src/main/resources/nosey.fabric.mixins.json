@@ -6,8 +6,9 @@
   "mixins": [
   ],
   "client": [
-    "GhastRendererMixin",
-    "CreeperRendererMixin"
+    "BeeRendererMixin",
+    "CreeperRendererMixin",
+    "GhastRendererMixin"
   ],
   "server": [
   ],

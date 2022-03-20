@@ -19,5 +19,8 @@ public class NoseyConfig implements ConfigData {
 
 		@Comment("When enabled Creeper's grow a nose [default: true]")
 		public boolean showCreeperNose = true;
+
+		@Comment("When enabled Bee's grow a nose [default: true]")
+		public boolean showBeeNose = true;
 	}
 }
