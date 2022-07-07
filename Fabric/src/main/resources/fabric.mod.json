@@ -14,7 +14,7 @@
       "issues": "https://github.com/Mrbysco/Nosey/issues"
     },
   
-    "license": "CC0-1.0",
+    "license": "MIT",
     "icon": "assets/nosey/icon.png",
   
     "environment": "*",
