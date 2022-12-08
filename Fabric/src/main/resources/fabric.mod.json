@@ -1,44 +1,40 @@
 {
-    "schemaVersion": 1,
-    "id": "nosey",
-    "version": "${version}",
-  
-    "name": "Nosey",
-    "description": "Do you smell what I'm cooking?",
-    "authors": [
-      "Mrbysco"
+  "schemaVersion": 1,
+  "id": "nosey",
+  "version": "${version}",
+  "name": "Nosey",
+  "description": "Do you smell what I'm cooking?",
+  "authors": [
+    "Mrbysco"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/nosey",
+    "sources": "https://github.com/Mrbysco/Nosey",
+    "issues": "https://github.com/Mrbysco/Nosey/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/nosey/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.mrbysco.nosey.NoseyFabric"
     ],
-    "contact": {
-      "homepage": "https://www.curseforge.com/minecraft/mc-mods/nosey",
-      "sources": "https://github.com/Mrbysco/Nosey",
-      "issues": "https://github.com/Mrbysco/Nosey/issues"
-    },
-  
-    "license": "MIT",
-    "icon": "assets/nosey/icon.png",
-  
-    "environment": "*",
-    "entrypoints": {
-      "client": [
-        "com.mrbysco.nosey.NoseyFabric"
-      ],
-      "modmenu": [
-        "com.mrbysco.nosey.config.NoseyModMenuIntegration"
-      ]
-    },
-    "mixins": [
-      "nosey.fabric.mixins.json"
-    ],
-  
-    "depends": {
-      "fabricloader": ">=0.14",
-      "fabric": "*",
-      "minecraft": "1.19.x",
-      "java": ">=17",
-      "cloth-config": ">=7.0.67"
-    },
-    "suggests": {
-      "another-mod": "*"
-    }
+    "modmenu": [
+      "com.mrbysco.nosey.config.NoseyModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "nosey.fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric": "*",
+    "minecraft": ">=1.19.3",
+    "java": ">=17",
+    "cloth-config": ">=7.0.67"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
+}
   

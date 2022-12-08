@@ -1,7 +1,6 @@
 package com.mrbysco.nosey.mixin;
 
 import com.mrbysco.nosey.client.layer.BeeNoseLayer;
-import com.mrbysco.nosey.client.layer.CreeperNoseLayer;
 import net.minecraft.client.model.BeeModel;
 import net.minecraft.client.renderer.entity.BeeRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
