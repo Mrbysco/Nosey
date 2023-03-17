@@ -25,7 +25,7 @@ public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		PartDefinition bone = partdefinition.addOrReplaceChild("bone", CubeListBuilder.create(),
-						PartPose.offset(0.5F, 19.0F, 0.0F));
+				PartPose.offset(0.5F, 19.0F, 0.0F));
 
 		bone.addOrReplaceChild("nose", CubeListBuilder.create()
 						.texOffs(0, 0).addBox(-1.5F, 0.0F, -6.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)),
@@ -43,7 +43,7 @@ public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
 		super.prepareMobModel(entityIn, limbSwing, limbSwingAmount, partialTick);
 		this.rollAmount = entityIn.getRollAmount(partialTick);
 	}
-	
+
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root.xRot = 0.0F;
@@ -60,7 +60,7 @@ public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
 			this.root.zRot = 0.0F;
 			if (!flag) {
 				float f1 = Mth.cos(ageInTicks * 0.18F);
-				this.root.xRot = 0.1F + f1 * (float)Math.PI * 0.025F;
+				this.root.xRot = 0.1F + f1 * (float) Math.PI * 0.025F;
 				this.root.y = 19.0F - Mth.cos(ageInTicks * 0.18F) * 0.9F;
 			}
 		}
