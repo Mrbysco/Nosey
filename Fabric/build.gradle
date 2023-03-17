@@ -113,6 +113,10 @@ if (System.getenv().CURSEFORGE_KEY) {
                 requiredDependency "cloth-config"
             }
         }
+
+        options {
+            forgeGradleIntegration = false
+        }
     }
 }
 
