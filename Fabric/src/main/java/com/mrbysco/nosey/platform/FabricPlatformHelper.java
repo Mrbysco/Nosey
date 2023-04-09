@@ -24,4 +24,10 @@ public class FabricPlatformHelper implements IPlatformHelper {
 		if (NoseyFabric.config == null) NoseyFabric.config = AutoConfig.getConfigHolder(NoseyConfig.class).getConfig();
 		return NoseyFabric.config.client.showBeeNose;
 	}
+
+	@Override
+	public boolean enableFrogNose() {
+		if (NoseyFabric.config == null) NoseyFabric.config = AutoConfig.getConfigHolder(NoseyConfig.class).getConfig();
+		return NoseyFabric.config.client.showFrogNose;
+	}
 }

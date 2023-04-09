@@ -9,6 +9,7 @@ public class NoseyConfig {
 		public final BooleanValue showGhastNose;
 		public final BooleanValue showCreeperNose;
 		public final BooleanValue showBeeNose;
+		public final BooleanValue showFrogNose;
 
 		Client(ForgeConfigSpec.Builder builder) {
 			builder.comment("Client settings")
@@ -25,6 +26,10 @@ public class NoseyConfig {
 			showBeeNose = builder
 					.comment("When enabled Bee's grow a nose [default: true]")
 					.define("showBeeNose", true);
+
+			showFrogNose = builder
+					.comment("When enabled Frog's grow a nose [default: true]")
+					.define("showFrogNose", true);
 
 			builder.pop();
 		}
