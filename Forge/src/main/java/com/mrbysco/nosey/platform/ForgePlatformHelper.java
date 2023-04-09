@@ -19,4 +19,9 @@ public class ForgePlatformHelper implements IPlatformHelper {
 	public boolean enableBeeNose() {
 		return NoseyConfig.CLIENT.showBeeNose.get();
 	}
+
+	@Override
+	public boolean enableFrogNose() {
+		return NoseyConfig.CLIENT.showFrogNose.get();
+	}
 }

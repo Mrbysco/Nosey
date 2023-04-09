@@ -26,7 +26,7 @@ public class CreeperNoseLayer<T extends Creeper> extends NoseLayer<T, CreeperMod
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation() {
+	public ResourceLocation noseTextureLocation(T entityIn) {
 		return NOSE_LOCATION;
 	}
 

@@ -26,7 +26,7 @@ public class BeeNoseLayer<T extends Bee> extends NoseLayer<T, BeeModel<T>> {
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation() {
+	public ResourceLocation noseTextureLocation(T entityIn) {
 		return NOSE_LOCATION;
 	}
 

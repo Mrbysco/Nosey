@@ -26,7 +26,7 @@ public class GhastNoseLayer<T extends Ghast> extends NoseLayer<T, GhastModel<T>>
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation() {
+	public ResourceLocation noseTextureLocation(T entityIn) {
 		return NOSE_LOCATION;
 	}
 
