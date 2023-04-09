@@ -43,12 +43,14 @@ public class FrogNoseModel<T extends Frog> extends HierarchicalModel<T> {
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		float movement = Math.min((float)entity.getDeltaMovement().lengthSqr() * 200.0F, 8.0F);
 		this.animate(entity.jumpAnimationState, FrogAnimation.FROG_JUMP, ageInTicks);
 		this.animate(entity.croakAnimationState, FrogAnimation.FROG_CROAK, ageInTicks);
 		this.animate(entity.tongueAnimationState, FrogAnimation.FROG_TONGUE, ageInTicks);
-		this.animate(entity.walkAnimationState, FrogAnimation.FROG_WALK, ageInTicks, movement);
-		this.animate(entity.swimAnimationState, FrogAnimation.FROG_SWIM, ageInTicks);
+		if (entity.isInWaterOrBubble()) {
+			this.animateWalk(FrogAnimation.FROG_SWIM, limbSwing, limbSwingAmount, 1.0F, 2.5F);
+		} else {
+			this.animateWalk(FrogAnimation.FROG_WALK, limbSwing, limbSwingAmount, 1.5F, 2.5F);
+		}
 		this.animate(entity.swimIdleAnimationState, FrogAnimation.FROG_IDLE_WATER, ageInTicks);
 	}
 
