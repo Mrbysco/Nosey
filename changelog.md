@@ -1,1 +1,2 @@
-* Fix the wrong Fabric jar being uploaded to curseforge
+* Add frog noses
+* Fix all noses being disabled if the ghast nose is disabled
