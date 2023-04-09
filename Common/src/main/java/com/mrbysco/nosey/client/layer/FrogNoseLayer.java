@@ -8,7 +8,7 @@ import net.minecraft.client.model.FrogModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.FrogVariant;
 import net.minecraft.world.entity.animal.frog.Frog;
@@ -46,7 +46,7 @@ public class FrogNoseLayer<T extends Frog> extends NoseLayer<T, FrogModel<T>> {
 			return NOSE_LOCATIONS.get(entityIn.getVariant());
 		} else {
 			FrogVariant variant = entityIn.getVariant();
-			ResourceLocation location = new ResourceLocation("textures/entity/frog/" + Registry.FROG_VARIANT.getKey(variant).getPath() + "_nose.png");
+			ResourceLocation location = new ResourceLocation("textures/entity/frog/" + BuiltInRegistries.FROG_VARIANT.getKey(variant).getPath() + "_nose.png");
 			return NOSE_LOCATIONS.put(variant, location);
 		}
 	}
