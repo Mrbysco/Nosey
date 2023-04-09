@@ -6,14 +6,15 @@
   "mixins": [
   ],
   "client": [
-	"BeeRendererMixin",
-	"CreeperRendererMixin",
-	"GhastRendererMixin"
+    "BeeRendererMixin",
+    "CreeperRendererMixin",
+    "FrogRendererMixin",
+    "GhastRendererMixin"
   ],
   "server": [
   ],
   "injectors": {
-	"defaultRequire": 1
+    "defaultRequire": 1
   }
 }
   

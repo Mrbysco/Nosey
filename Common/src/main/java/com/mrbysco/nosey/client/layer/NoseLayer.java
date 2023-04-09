@@ -19,22 +19,22 @@ public abstract class NoseLayer<T extends LivingEntity, M extends EntityModel<T>
 
 	@Override
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLightIn, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-		if (Services.PLATFORM.enableGhastNose()) {
+		if (canRender()) {
 			this.getParentModel().copyPropertiesTo(getNoseModel());
 			getNoseModel().prepareMobModel(livingEntity, limbSwing, limbSwingAmount, partialTicks);
 			getNoseModel().setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			VertexConsumer vertexconsumer = getConsumer(bufferSource);
+			VertexConsumer vertexconsumer = getConsumer(bufferSource, livingEntity);
 			getNoseModel().renderToBuffer(poseStack, vertexconsumer, packedLightIn, LivingEntityRenderer.getOverlayCoords(livingEntity, 0), 1.0F, 1.0F, 1.0F, 1.0F);
 		}
 	}
 
-	public VertexConsumer getConsumer(MultiBufferSource bufferSource) {
-		return bufferSource.getBuffer(RenderType.entityCutoutNoCull(noseTextureLocation()));
+	public VertexConsumer getConsumer(MultiBufferSource bufferSource, T livingEntity) {
+		return bufferSource.getBuffer(RenderType.entityCutoutNoCull(noseTextureLocation(livingEntity)));
 	}
 
 	public abstract EntityModel<T> getNoseModel();
 
-	public abstract ResourceLocation noseTextureLocation();
+	public abstract ResourceLocation noseTextureLocation(T entityIn);
 
 	public abstract boolean canRender();
 }

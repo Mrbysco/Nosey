@@ -16,4 +16,9 @@ public interface IPlatformHelper {
 	 * Enables the rendering of the bee nose
 	 */
 	boolean enableBeeNose();
+
+	/**
+	 * Enables the rendering of the frog nose
+	 */
+	boolean enableFrogNose();
 }

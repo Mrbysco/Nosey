@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "nosey",
     "version": "${version}",
-  
+
     "name": "Nosey",
     "description": "Do you smell what I'm cooking?",
     "authors": [
@@ -13,10 +13,10 @@
       "sources": "https://github.com/Mrbysco/Nosey",
       "issues": "https://github.com/Mrbysco/Nosey/issues"
     },
-  
+
     "license": "MIT",
     "icon": "assets/nosey/icon.png",
-  
+
     "environment": "*",
     "entrypoints": {
       "client": [
@@ -29,7 +29,7 @@
     "mixins": [
       "nosey.fabric.mixins.json"
     ],
-  
+
     "depends": {
       "fabricloader": ">=0.14",
       "fabric": "*",
@@ -41,4 +41,3 @@
       "another-mod": "*"
     }
   }
-  
