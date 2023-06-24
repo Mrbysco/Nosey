@@ -47,7 +47,7 @@ public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root.xRot = 0.0F;
-		boolean flag = entity.isOnGround() && entity.getDeltaMovement().lengthSqr() < 1.0E-7D;
+		boolean flag = entity.onGround() && entity.getDeltaMovement().lengthSqr() < 1.0E-7D;
 		if (!flag) {
 			this.root.xRot = 0.0F;
 			this.root.yRot = 0.0F;
