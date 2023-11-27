@@ -3,7 +3,7 @@ package com.mrbysco.nosey.platform;
 import com.mrbysco.nosey.config.NoseyConfig;
 import com.mrbysco.nosey.platform.services.IPlatformHelper;
 
-public class ForgePlatformHelper implements IPlatformHelper {
+public class NeoForgePlatformHelper implements IPlatformHelper {
 
 	@Override
 	public boolean enableGhastNose() {

@@ -13,7 +13,7 @@ import net.minecraft.client.renderer.entity.CreeperRenderer;
 import net.minecraft.client.renderer.entity.FrogRenderer;
 import net.minecraft.client.renderer.entity.GhastRenderer;
 import net.minecraft.world.entity.EntityType;
-import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 public class ModelLayerHelper {
 

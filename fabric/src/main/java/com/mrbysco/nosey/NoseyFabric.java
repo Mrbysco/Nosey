@@ -21,8 +21,6 @@ public class NoseyFabric implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		CommonClass.init();
-
 		ConfigHolder<NoseyConfig> holder = AutoConfig.register(NoseyConfig.class, Toml4jConfigSerializer::new);
 		config = holder.getConfig();
 		try {

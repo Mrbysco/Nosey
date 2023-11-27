@@ -1,7 +1,7 @@
 package com.mrbysco.nosey.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class NoseyConfig {
@@ -11,7 +11,7 @@ public class NoseyConfig {
 		public final BooleanValue showBeeNose;
 		public final BooleanValue showFrogNose;
 
-		Client(ForgeConfigSpec.Builder builder) {
+		Client(ModConfigSpec.Builder builder) {
 			builder.comment("Client settings")
 					.push("client");
 
@@ -35,11 +35,11 @@ public class NoseyConfig {
 		}
 	}
 
-	public static final ForgeConfigSpec clientSpec;
+	public static final ModConfigSpec clientSpec;
 	public static final Client CLIENT;
 
 	static {
-		final Pair<Client, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Client::new);
+		final Pair<Client, ModConfigSpec> specPair = new ModConfigSpec.Builder().configure(Client::new);
 		clientSpec = specPair.getRight();
 		CLIENT = specPair.getLeft();
 	}
