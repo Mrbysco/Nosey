@@ -2,5 +2,7 @@
 	"text.autoconfig.nosey.title": "Nosey",
 	"text.autoconfig.nosey.option.client": "Client",
   	"text.autoconfig.nosey.option.client.showGhastNose": "Show Ghast Nose",
-  	"text.autoconfig.nosey.option.client.showCreeperNose": "Show Creeper Nose"
+  	"text.autoconfig.nosey.option.client.showCreeperNose": "Show Creeper Nose",
+  	"text.autoconfig.nosey.option.client.showBeeNose": "Show Bee Nose",
+  	"text.autoconfig.nosey.option.client.showFrogNose": "Show Frog Nose"
 }
