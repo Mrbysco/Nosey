@@ -14,7 +14,7 @@ Do you smell what I'm cooking?
 '''
 [[dependencies.nosey]]
 modId="minecraft"
-mandatory=true
-versionRange="[1.20.2,1.21)"
+type="REQUIRED"
+versionRange="[1.20.4,1.21)"
 ordering="NONE"
 side="BOTH"
