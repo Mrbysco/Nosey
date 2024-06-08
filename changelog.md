@@ -1,1 +1,1 @@
-* Update NeoForge support (The mod now requires NeoForge **24.4.100-beta** or above)
+* Initial update to 1.20.6
