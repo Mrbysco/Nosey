@@ -22,6 +22,6 @@ public abstract class BeeRendererMixin extends MobRenderer<Bee, BeeModel<Bee>> {
 	private void noseyInit(Context context, CallbackInfo info) {
 		BeeRenderer beeRenderer = (BeeRenderer) (Object) this;
 
-		this.addLayer(new BeeNoseLayer(beeRenderer, context.getModelSet()));
+		this.addLayer(new BeeNoseLayer<>(beeRenderer, context.getModelSet()));
 	}
 }

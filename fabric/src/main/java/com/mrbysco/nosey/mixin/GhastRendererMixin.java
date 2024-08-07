@@ -22,6 +22,6 @@ public abstract class GhastRendererMixin extends MobRenderer<Ghast, GhastModel<G
 	private void noseyInit(Context context, CallbackInfo info) {
 		GhastRenderer ghastRenderer = (GhastRenderer) (Object) this;
 
-		this.addLayer(new GhastNoseLayer(ghastRenderer, context.getModelSet()));
+		this.addLayer(new GhastNoseLayer<>(ghastRenderer, context.getModelSet()));
 	}
 }

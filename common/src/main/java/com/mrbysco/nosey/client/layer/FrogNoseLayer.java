@@ -8,7 +8,6 @@ import net.minecraft.client.model.FrogModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.FrogVariant;
@@ -22,9 +21,9 @@ public class FrogNoseLayer<T extends Frog> extends NoseLayer<T, FrogModel<T>> {
 
 	private static Map<ResourceKey<FrogVariant>, ResourceLocation> generateMap() {
 		Map<ResourceKey<FrogVariant>, ResourceLocation> map = new HashMap<>();
-		map.put(FrogVariant.COLD, new ResourceLocation(Constants.MOD_ID, "textures/entity/frog/cold_nose.png"));
-		map.put(FrogVariant.TEMPERATE, new ResourceLocation(Constants.MOD_ID, "textures/entity/frog/temperate_nose.png"));
-		map.put(FrogVariant.WARM, new ResourceLocation(Constants.MOD_ID, "textures/entity/frog/warm_nose.png"));
+		map.put(FrogVariant.COLD, Constants.modLoc("textures/entity/frog/cold_nose.png"));
+		map.put(FrogVariant.TEMPERATE, Constants.modLoc("textures/entity/frog/temperate_nose.png"));
+		map.put(FrogVariant.WARM, Constants.modLoc("textures/entity/frog/warm_nose.png"));
 
 		return map;
 	}
@@ -47,7 +46,7 @@ public class FrogNoseLayer<T extends Frog> extends NoseLayer<T, FrogModel<T>> {
 		if (NOSE_LOCATIONS.containsKey(variant)) {
 			return NOSE_LOCATIONS.get(variant);
 		} else {
-			ResourceLocation location = new ResourceLocation("textures/entity/frog/" + variant.location().getPath() + "_nose.png");
+			ResourceLocation location = ResourceLocation.withDefaultNamespace("textures/entity/frog/" + variant.location().getPath() + "_nose.png");
 			return NOSE_LOCATIONS.put(variant, location);
 		}
 	}

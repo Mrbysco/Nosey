@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.Bee;
 
 public class BeeNoseLayer<T extends Bee> extends NoseLayer<T, BeeModel<T>> {
-	private static final ResourceLocation NOSE_LOCATION = new ResourceLocation(Constants.MOD_ID, "textures/entity/bee/nose.png");
+	private static final ResourceLocation NOSE_LOCATION = Constants.modLoc("textures/entity/bee/nose.png");
 	private final BeeNoseModel<T> model;
 
 	public BeeNoseLayer(RenderLayerParent<T, BeeModel<T>> renderLayerParent, EntityModelSet modelSet) {

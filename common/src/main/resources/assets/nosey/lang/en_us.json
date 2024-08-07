@@ -4,5 +4,18 @@
   	"text.autoconfig.nosey.option.client.showGhastNose": "Show Ghast Nose",
   	"text.autoconfig.nosey.option.client.showCreeperNose": "Show Creeper Nose",
   	"text.autoconfig.nosey.option.client.showBeeNose": "Show Bee Nose",
-  	"text.autoconfig.nosey.option.client.showFrogNose": "Show Frog Nose"
+  	"text.autoconfig.nosey.option.client.showFrogNose": "Show Frog Nose",
+
+	"nosey.configuration.title": "Nosey Config",
+	"nosey.configuration.client": "Client",
+	"nosey.configuration.client.tooltip": "Client Settings",
+
+	"nosey.configuration.showBeeNose": "Show Bee Nose",
+	"nosey.configuration.showBeeNose.tooltip": "When enabled Bees grow a nose [default: true]",
+	"nosey.configuration.showFrogNose": "Show Frog Nose",
+	"nosey.configuration.showFrogNose.tooltip": "When enabled Frogs grow a nose [default: true]",
+	"nosey.configuration.showCreeperNose": "Show Creeper Nose",
+	"nosey.configuration.showCreeperNose.tooltip": "When enabled Creepers grow a nose [default: true]",
+	"nosey.configuration.showGhastNose": "Show Ghast Nose",
+	"nosey.configuration.showGhastNose.tooltip": "When enabled Ghasts grow a nose [default: true]"
 }

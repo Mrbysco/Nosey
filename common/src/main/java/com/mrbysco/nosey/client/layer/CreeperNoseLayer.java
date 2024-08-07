@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Creeper;
 
 public class CreeperNoseLayer<T extends Creeper> extends NoseLayer<T, CreeperModel<T>> {
-	private static final ResourceLocation NOSE_LOCATION = new ResourceLocation(Constants.MOD_ID, "textures/entity/creeper/nose.png");
+	private static final ResourceLocation NOSE_LOCATION = Constants.modLoc("textures/entity/creeper/nose.png");
 	private final CreeperNoseModel<T> model;
 
 	public CreeperNoseLayer(RenderLayerParent<T, CreeperModel<T>> renderLayerParent, EntityModelSet modelSet) {

@@ -17,13 +17,15 @@ public abstract class NoseLayer<T extends LivingEntity, M extends EntityModel<T>
 	}
 
 	@Override
-	public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLightIn, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLightIn, T livingEntity,
+	                   float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks,
+	                   float netHeadYaw, float headPitch) {
 		if (canRender()) {
 			this.getParentModel().copyPropertiesTo(getNoseModel());
 			getNoseModel().prepareMobModel(livingEntity, limbSwing, limbSwingAmount, partialTicks);
 			getNoseModel().setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			VertexConsumer vertexconsumer = getConsumer(bufferSource, livingEntity);
-			getNoseModel().renderToBuffer(poseStack, vertexconsumer, packedLightIn, LivingEntityRenderer.getOverlayCoords(livingEntity, 0), 1.0F, 1.0F, 1.0F, 1.0F);
+			getNoseModel().renderToBuffer(poseStack, vertexconsumer, packedLightIn, LivingEntityRenderer.getOverlayCoords(livingEntity, 0));
 		}
 	}
 

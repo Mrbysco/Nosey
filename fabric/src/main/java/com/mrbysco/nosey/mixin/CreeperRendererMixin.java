@@ -22,6 +22,6 @@ public abstract class CreeperRendererMixin extends MobRenderer<Creeper, CreeperM
 	private void noseyInit(Context context, CallbackInfo info) {
 		CreeperRenderer creeperRenderer = (CreeperRenderer) (Object) this;
 
-		this.addLayer(new CreeperNoseLayer(creeperRenderer, context.getModelSet()));
+		this.addLayer(new CreeperNoseLayer<>(creeperRenderer, context.getModelSet()));
 	}
 }

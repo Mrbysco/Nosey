@@ -16,19 +16,19 @@ public class NoseyConfig {
 					.push("client");
 
 			showGhastNose = builder
-					.comment("When enabled Ghast's grow a nose [default: true]")
+					.comment("When enabled Ghasts grow a nose [default: true]")
 					.define("showGhastNose", true);
 
 			showCreeperNose = builder
-					.comment("When enabled Creeper's grow a nose [default: true]")
+					.comment("When enabled Creepers grow a nose [default: true]")
 					.define("showCreeperNose", true);
 
 			showBeeNose = builder
-					.comment("When enabled Bee's grow a nose [default: true]")
+					.comment("When enabled Bees grow a nose [default: true]")
 					.define("showBeeNose", true);
 
 			showFrogNose = builder
-					.comment("When enabled Frog's grow a nose [default: true]")
+					.comment("When enabled Frogs grow a nose [default: true]")
 					.define("showFrogNose", true);
 
 			builder.pop();

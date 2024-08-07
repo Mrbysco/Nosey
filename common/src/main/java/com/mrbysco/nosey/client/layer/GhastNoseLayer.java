@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Ghast;
 
 public class GhastNoseLayer<T extends Ghast> extends NoseLayer<T, GhastModel<T>> {
-	private static final ResourceLocation NOSE_LOCATION = new ResourceLocation(Constants.MOD_ID, "textures/entity/ghast/nose.png");
+	private static final ResourceLocation NOSE_LOCATION = Constants.modLoc("textures/entity/ghast/nose.png");
 	private final GhastNoseModel<T> model;
 
 	public GhastNoseLayer(RenderLayerParent<T, GhastModel<T>> renderLayerParent, EntityModelSet modelSet) {
