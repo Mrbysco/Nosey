@@ -28,7 +28,7 @@ public class FrogNoseLayer<S extends FrogRenderState> extends NoseLayer<S, FrogM
 	public ResourceLocation noseTextureLocation(S renderState) {
 		ResourceLocation frogTexture = renderState.texture;
 		String path = frogTexture.getPath();
-		String nosePath = path.replace(".png", "_nose.png");
+		String nosePath = path.replace("_frog.png", "_nose.png");
 		return Constants.modLoc(nosePath);
 	}
 
