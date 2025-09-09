@@ -1,6 +1,6 @@
 package com.mrbysco.nosey.client.model;
 
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -8,14 +8,13 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.client.renderer.entity.state.GhastRenderState;
 
-public class GhastNoseModel<T extends Entity> extends HierarchicalModel<T> {
-	private final ModelPart root;
+public class GhastNoseModel extends EntityModel<GhastRenderState> {
 	private final ModelPart nose;
 
 	public GhastNoseModel(ModelPart root) {
-		this.root = root;
+		super(root);
 		this.nose = root.getChild("nose");
 	}
 
@@ -33,12 +32,7 @@ public class GhastNoseModel<T extends Entity> extends HierarchicalModel<T> {
 	}
 
 	@Override
-	public ModelPart root() {
-		return this.root;
-	}
-
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+	public void setupAnim(GhastRenderState renderState) {
+		super.setupAnim(renderState);
 	}
 }

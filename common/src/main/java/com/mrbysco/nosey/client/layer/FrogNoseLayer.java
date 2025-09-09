@@ -4,51 +4,32 @@ import com.mrbysco.nosey.Constants;
 import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.FrogNoseModel;
 import com.mrbysco.nosey.platform.Services;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.FrogModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.client.renderer.entity.state.FrogRenderState;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.FrogVariant;
-import net.minecraft.world.entity.animal.frog.Frog;
 
-import java.util.HashMap;
-import java.util.Map;
+public class FrogNoseLayer<S extends FrogRenderState> extends NoseLayer<S, FrogModel> {
+	private final FrogNoseModel model;
 
-public class FrogNoseLayer<T extends Frog> extends NoseLayer<T, FrogModel<T>> {
-	public static final Map<ResourceKey<FrogVariant>, ResourceLocation> NOSE_LOCATIONS = generateMap();
-
-	private static Map<ResourceKey<FrogVariant>, ResourceLocation> generateMap() {
-		Map<ResourceKey<FrogVariant>, ResourceLocation> map = new HashMap<>();
-		map.put(FrogVariant.COLD, Constants.modLoc("textures/entity/frog/cold_nose.png"));
-		map.put(FrogVariant.TEMPERATE, Constants.modLoc("textures/entity/frog/temperate_nose.png"));
-		map.put(FrogVariant.WARM, Constants.modLoc("textures/entity/frog/warm_nose.png"));
-
-		return map;
-	}
-
-	private final FrogNoseModel<T> model;
-
-	public FrogNoseLayer(RenderLayerParent<T, FrogModel<T>> renderLayerParent, EntityModelSet modelSet) {
+	public FrogNoseLayer(RenderLayerParent<S, FrogModel> renderLayerParent, EntityModelSet modelSet) {
 		super(renderLayerParent);
-		this.model = new FrogNoseModel<>(modelSet.bakeLayer(ClientHandler.FROG_NOSE));
+		this.model = new FrogNoseModel(modelSet.bakeLayer(ClientHandler.FROG_NOSE));
 	}
 
 	@Override
-	public HierarchicalModel<T> getNoseModel() {
+	public EntityModel<? super S> getNoseModel() {
 		return model;
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation(T entityIn) {
-		ResourceKey<FrogVariant> variant = entityIn.getVariant().unwrapKey().orElseThrow();
-		if (NOSE_LOCATIONS.containsKey(variant)) {
-			return NOSE_LOCATIONS.get(variant);
-		} else {
-			ResourceLocation location = ResourceLocation.withDefaultNamespace("textures/entity/frog/" + variant.location().getPath() + "_nose.png");
-			return NOSE_LOCATIONS.put(variant, location);
-		}
+	public ResourceLocation noseTextureLocation(S renderState) {
+		ResourceLocation frogTexture = renderState.texture;
+		String path = frogTexture.getPath();
+		String nosePath = path.replace(".png", "_nose.png");
+		return Constants.modLoc(nosePath);
 	}
 
 	@Override

@@ -1,20 +1,21 @@
 package com.mrbysco.nosey.client.model;
 
 import net.minecraft.client.animation.definitions.FrogAnimation;
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.animal.frog.Frog;
+import net.minecraft.client.renderer.entity.state.FrogRenderState;
 
-public class FrogNoseModel<T extends Frog> extends HierarchicalModel<T> {
+public class FrogNoseModel extends EntityModel<FrogRenderState> {
 	private final ModelPart root;
 	private final ModelPart nose;
 
 	public FrogNoseModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.nose = this.root.getChild("body").getChild("head");
 	}
@@ -34,21 +35,17 @@ public class FrogNoseModel<T extends Frog> extends HierarchicalModel<T> {
 	}
 
 	@Override
-	public ModelPart root() {
-		return this.root;
-	}
-
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.animate(entity.jumpAnimationState, FrogAnimation.FROG_JUMP, ageInTicks);
-		this.animate(entity.croakAnimationState, FrogAnimation.FROG_CROAK, ageInTicks);
-		this.animate(entity.tongueAnimationState, FrogAnimation.FROG_TONGUE, ageInTicks);
-		if (entity.isInWaterOrBubble()) {
-			this.animateWalk(FrogAnimation.FROG_SWIM, limbSwing, limbSwingAmount, 1.0F, 2.5F);
+	public void setupAnim(FrogRenderState renderState) {
+		super.setupAnim(renderState);
+		this.animate(renderState.jumpAnimationState, FrogAnimation.FROG_JUMP, renderState.ageInTicks);
+		this.animate(renderState.croakAnimationState, FrogAnimation.FROG_CROAK, renderState.ageInTicks);
+		this.animate(renderState.tongueAnimationState, FrogAnimation.FROG_TONGUE, renderState.ageInTicks);
+		if (renderState.isSwimming) {
+			this.animateWalk(FrogAnimation.FROG_SWIM, renderState.walkAnimationPos, renderState.walkAnimationSpeed, 1.0F, 2.5F);
 		} else {
-			this.animateWalk(FrogAnimation.FROG_WALK, limbSwing, limbSwingAmount, 1.5F, 2.5F);
+			this.animateWalk(FrogAnimation.FROG_WALK, renderState.walkAnimationPos, renderState.walkAnimationSpeed, 1.5F, 2.5F);
 		}
-		this.animate(entity.swimIdleAnimationState, FrogAnimation.FROG_IDLE_WATER, ageInTicks);
+
+		this.animate(renderState.swimIdleAnimationState, FrogAnimation.FROG_IDLE_WATER, renderState.ageInTicks);
 	}
 }

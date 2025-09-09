@@ -1,7 +1,6 @@
 package com.mrbysco.nosey.client.model;
 
-import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.ModelUtils;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -9,14 +8,15 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.client.renderer.entity.state.BeeRenderState;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.animal.Bee;
 
-public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
+public class BeeNoseModel extends EntityModel<BeeRenderState> {
 	private final ModelPart root;
 	private float rollAmount;
 
 	public BeeNoseModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("bone");
 	}
 
@@ -35,38 +35,29 @@ public class BeeNoseModel<T extends Bee> extends HierarchicalModel<T> {
 	}
 
 	@Override
-	public ModelPart root() {
-		return this.root;
-	}
-
-	public void prepareMobModel(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
-		super.prepareMobModel(entityIn, limbSwing, limbSwingAmount, partialTick);
-		this.rollAmount = entityIn.getRollAmount(partialTick);
-	}
-
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.root.xRot = 0.0F;
-		boolean flag = entity.onGround() && entity.getDeltaMovement().lengthSqr() < 1.0E-7D;
+	public void setupAnim(BeeRenderState state) {
+		super.setupAnim(state);
+		this.rollAmount = state.rollAmount;
+		boolean flag = state.isOnGround;
 		if (!flag) {
 			this.root.xRot = 0.0F;
 			this.root.yRot = 0.0F;
 			this.root.zRot = 0.0F;
 		}
 
-		if (!entity.isAngry()) {
+		if (!state.isAngry) {
 			this.root.xRot = 0.0F;
 			this.root.yRot = 0.0F;
 			this.root.zRot = 0.0F;
 			if (!flag) {
-				float f1 = Mth.cos(ageInTicks * 0.18F);
+				float f1 = Mth.cos(state.ageInTicks * 0.18F);
 				this.root.xRot = 0.1F + f1 * (float) Math.PI * 0.025F;
-				this.root.y = 19.0F - Mth.cos(ageInTicks * 0.18F) * 0.9F;
+				this.root.y = 19.0F - Mth.cos(state.ageInTicks * 0.18F) * 0.9F;
 			}
 		}
 
 		if (this.rollAmount > 0.0F) {
-			this.root.xRot = ModelUtils.rotlerpRad(this.root.xRot, 3.0915928F, this.rollAmount);
+			this.root.xRot = Mth.rotLerpRad(this.root.xRot, 3.0915928F, this.rollAmount);
 		}
 	}
 }

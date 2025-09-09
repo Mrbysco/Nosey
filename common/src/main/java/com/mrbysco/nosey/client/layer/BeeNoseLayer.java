@@ -8,25 +8,25 @@ import net.minecraft.client.model.BeeModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.state.BeeRenderState;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.Bee;
 
-public class BeeNoseLayer<T extends Bee> extends NoseLayer<T, BeeModel<T>> {
+public class BeeNoseLayer<T extends BeeRenderState> extends NoseLayer<T, BeeModel> {
 	private static final ResourceLocation NOSE_LOCATION = Constants.modLoc("textures/entity/bee/nose.png");
-	private final BeeNoseModel<T> model;
+	private final BeeNoseModel model;
 
-	public BeeNoseLayer(RenderLayerParent<T, BeeModel<T>> renderLayerParent, EntityModelSet modelSet) {
+	public BeeNoseLayer(RenderLayerParent<T, BeeModel> renderLayerParent, EntityModelSet modelSet) {
 		super(renderLayerParent);
-		this.model = new BeeNoseModel<>(modelSet.bakeLayer(ClientHandler.BEE_NOSE));
+		this.model = new BeeNoseModel(modelSet.bakeLayer(ClientHandler.BEE_NOSE));
 	}
 
 	@Override
-	public EntityModel<T> getNoseModel() {
+	public EntityModel<? super T> getNoseModel() {
 		return model;
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation(T entityIn) {
+	public ResourceLocation noseTextureLocation(T renderState) {
 		return NOSE_LOCATION;
 	}
 
