@@ -4,15 +4,15 @@ import com.mrbysco.nosey.Constants;
 import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.BeeNoseModel;
 import com.mrbysco.nosey.platform.Services;
-import net.minecraft.client.model.BeeModel;
+import net.minecraft.client.model.animal.bee.BeeModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.state.BeeRenderState;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class BeeNoseLayer<T extends BeeRenderState> extends NoseLayer<T, BeeModel> {
-	private static final ResourceLocation NOSE_LOCATION = Constants.modLoc("textures/entity/bee/nose.png");
+	private static final Identifier NOSE_LOCATION = Constants.modLoc("textures/entity/bee/nose.png");
 	private final BeeNoseModel model;
 
 	public BeeNoseLayer(RenderLayerParent<T, BeeModel> renderLayerParent, EntityModelSet modelSet) {
@@ -26,7 +26,7 @@ public class BeeNoseLayer<T extends BeeRenderState> extends NoseLayer<T, BeeMode
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation(T renderState) {
+	public Identifier noseTextureLocation(T renderState) {
 		return NOSE_LOCATION;
 	}
 

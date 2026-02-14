@@ -1,7 +1,7 @@
 package com.mrbysco.nosey.mixin;
 
 import com.mrbysco.nosey.client.layer.CreeperNoseLayer;
-import net.minecraft.client.model.CreeperModel;
+import net.minecraft.client.model.monster.creeper.CreeperModel;
 import net.minecraft.client.renderer.entity.CreeperRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.MobRenderer;

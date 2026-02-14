@@ -5,11 +5,11 @@ import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.FrogNoseModel;
 import com.mrbysco.nosey.platform.Services;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.FrogModel;
+import net.minecraft.client.model.animal.frog.FrogModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.state.FrogRenderState;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class FrogNoseLayer<S extends FrogRenderState> extends NoseLayer<S, FrogModel> {
 	private final FrogNoseModel model;
@@ -25,8 +25,8 @@ public class FrogNoseLayer<S extends FrogRenderState> extends NoseLayer<S, FrogM
 	}
 
 	@Override
-	public ResourceLocation noseTextureLocation(S renderState) {
-		ResourceLocation frogTexture = renderState.texture;
+	public Identifier noseTextureLocation(S renderState) {
+		Identifier frogTexture = renderState.texture;
 		String path = frogTexture.getPath();
 		String nosePath = path.replace("_frog.png", "_nose.png");
 		return Constants.modLoc(nosePath);

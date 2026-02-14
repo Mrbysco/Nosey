@@ -1,7 +1,7 @@
 package com.mrbysco.nosey.mixin;
 
 import com.mrbysco.nosey.client.layer.FrogNoseLayer;
-import net.minecraft.client.model.FrogModel;
+import net.minecraft.client.model.animal.frog.FrogModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.FrogRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;

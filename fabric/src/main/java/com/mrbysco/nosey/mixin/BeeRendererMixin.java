@@ -1,12 +1,12 @@
 package com.mrbysco.nosey.mixin;
 
 import com.mrbysco.nosey.client.layer.BeeNoseLayer;
-import net.minecraft.client.model.BeeModel;
+import net.minecraft.client.model.animal.bee.BeeModel;
 import net.minecraft.client.renderer.entity.AgeableMobRenderer;
 import net.minecraft.client.renderer.entity.BeeRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.state.BeeRenderState;
-import net.minecraft.world.entity.animal.Bee;
+import net.minecraft.world.entity.animal.bee.Bee;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

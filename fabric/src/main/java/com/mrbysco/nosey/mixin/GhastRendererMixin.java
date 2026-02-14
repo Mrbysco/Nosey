@@ -1,7 +1,7 @@
 package com.mrbysco.nosey.mixin;
 
 import com.mrbysco.nosey.client.layer.GhastNoseLayer;
-import net.minecraft.client.model.GhastModel;
+import net.minecraft.client.model.monster.ghast.GhastModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.GhastRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
