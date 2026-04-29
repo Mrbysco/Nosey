@@ -3,7 +3,7 @@ package com.mrbysco.nosey.client.layer;
 import com.mrbysco.nosey.Constants;
 import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.CreeperNoseModel;
-import com.mrbysco.nosey.platform.Services;
+import com.mrbysco.nosey.config.NoseyConfig;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.monster.creeper.CreeperModel;
@@ -32,6 +32,6 @@ public class CreeperNoseLayer<S extends CreeperRenderState> extends NoseLayer<S,
 
 	@Override
 	public boolean canRender() {
-		return Services.PLATFORM.enableCreeperNose();
+		return NoseyConfig.CLIENT.showCreeperNose.get();
 	}
 }

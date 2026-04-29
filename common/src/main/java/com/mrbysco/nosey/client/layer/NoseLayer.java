@@ -23,7 +23,7 @@ public abstract class NoseLayer<S extends LivingEntityRenderState, M extends Ent
 					this.getNoseModel(),
 					renderState,
 					poseStack,
-					RenderTypes.entityCutoutNoCull(noseTextureLocation(renderState)),
+					RenderTypes.entityCutout(noseTextureLocation(renderState)),
 					packedLight,
 					OverlayTexture.NO_OVERLAY,
 					renderState.outlineColor,

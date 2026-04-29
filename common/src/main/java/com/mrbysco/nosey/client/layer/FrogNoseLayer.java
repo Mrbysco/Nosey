@@ -3,7 +3,7 @@ package com.mrbysco.nosey.client.layer;
 import com.mrbysco.nosey.Constants;
 import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.FrogNoseModel;
-import com.mrbysco.nosey.platform.Services;
+import com.mrbysco.nosey.config.NoseyConfig;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.animal.frog.FrogModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -34,6 +34,6 @@ public class FrogNoseLayer<S extends FrogRenderState> extends NoseLayer<S, FrogM
 
 	@Override
 	public boolean canRender() {
-		return Services.PLATFORM.enableFrogNose();
+		return NoseyConfig.CLIENT.showFrogNose.get();
 	}
 }

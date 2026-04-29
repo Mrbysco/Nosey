@@ -3,7 +3,7 @@ package com.mrbysco.nosey.client.layer;
 import com.mrbysco.nosey.Constants;
 import com.mrbysco.nosey.client.ClientHandler;
 import com.mrbysco.nosey.client.model.GhastNoseModel;
-import com.mrbysco.nosey.platform.Services;
+import com.mrbysco.nosey.config.NoseyConfig;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.monster.ghast.GhastModel;
@@ -32,6 +32,6 @@ public class GhastNoseLayer<S extends GhastRenderState> extends NoseLayer<S, Gha
 
 	@Override
 	public boolean canRender() {
-		return Services.PLATFORM.enableGhastNose();
+		return NoseyConfig.CLIENT.showGhastNose.get();
 	}
 }
